@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang Web 4 Nút</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config để dùng dark mode
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen flex items-center justify-center px-4">
+
+  <div class="w-full max-w-2xl text-center space-y-8">
+    <h1 class="text-4xl font-bold animate-fade-in-up">🌐 Website 4 Nút Xịn Xò</h1>
+    <p class="text-lg animate-fade-in-up delay-150">Chọn một trong các nút bên dưới để đến trang bạn muốn</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 animate-fade-in-up delay-300">
+      <a href="https://example.com" target="_blank"
+         class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-semibold py-3 px-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-2xl">
+        Link 1
+      </a>
+      <a href="https://example.com" target="_blank"
+         class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-semibold py-3 px-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-2xl">
+        Link 2
+      </a>
+      <a href="https://example.com" target="_blank"
+         class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-semibold py-3 px-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-2xl">
+        Link 3
+      </a>
+      <a href="https://example.com" target="_blank"
+         class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-semibold py-3 px-6 rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-2xl">
+        Link 4
+      </a>
+    </div>
+
+    <!-- Nút bật tắt dark mode thủ công -->
+    <button id="toggleDark" class="mt-6 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white py-2 px-4 rounded-full shadow-md hover:bg-gray-300 dark:hover:bg-gray-600 transition">
+      🌗 Bật / Tắt Dark Mode
+    </button>
+  </div>
+
+  <!-- Custom animation -->
+  <style>
+    .animate-fade-in-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    .delay-150 { animation-delay: 0.15s; }
+    .delay-300 { animation-delay: 0.3s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <!-- Toggle Dark Mode Script -->
+  <script>
+    const toggleBtn = document.getElementById("toggleDark");
+    toggleBtn.addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+    });
+  </script>
+</body>
+</html>
